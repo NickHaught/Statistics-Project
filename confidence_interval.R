@@ -1,3 +1,4 @@
+# Program Name: confidence_interval.R
 # Function: confidence_interval
 # This function calculates the confidence interval for the population mean
 # of a given dataset. 
