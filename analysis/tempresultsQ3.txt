@@ -1,0 +1,7 @@
+
+The confidence intervals in order from largest to smallest was Virginica (~0.30), Versicolor (~0.26), and Setosa (~0.10)
+One method to identify flowers is to see what the petal length is and match it to a flower. None of the confidence intervals overlap which means if our saple falls within one of the 3 intervals, then we can be 95% confident our observed flower is that interval's flower. A smaller interval is both helpful and hurtful in that reguard. Having a smaller interval is great for identifying the flower but causes problems if our measurment falls outside all of the intervals. A smaller confidence level would be required which would increase our chance of false identification errors occuring. 
+
+To get a confidence level of 95% for Setosa, an interval from 4.13 to 4.39 is needed.
+Versicolor: 4.13 - 4.39
+Virginica: 5.40 - 5.70
