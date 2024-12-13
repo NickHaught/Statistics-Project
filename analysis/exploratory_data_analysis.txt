@@ -29,3 +29,36 @@ Setosa is easily separable from Versicolor and Virginica in all scatt plots due 
 smaller petal dimensions and larger sepal widths. Versicolor and Virginica overlap in 
 moss plots, but observable differences in petal dimensions provide the best separation
 between the two species. Petal dimensions are the best for distinguishing species. 
+
+
+Box Plots
+    Comments on using these features to separate species of the Iris flowers 
+
+Sepal Length Box plots:
+The Sepal lengths are mostly distinct with the longest belonging to the Virginica flowers. 
+The overall variance however for each sample is rather high with a sepal length of 5.6 being 
+possible for all flowers. The best use would be to distinguish Sentosa and Virginica flowers 
+as they have little overlap with almost fully distinct distributions.
+
+Sepal Width Box Plots:
+Out of all four features, the Sepal width has the most overlap for all the distributions. The Virginica 
+and Veriscolor flowers in particular being almost identical. The Setosa does differ from the over two with 
+the majority of the distribution being above the other two. Overall Sepal width is not a good identifier on
+its own without data to compare it to0.
+
+Petal Length Box Plots:
+The petal lengths have a noticeably low variance compared to the rest of the data. The Setosa flower 
+has the lowest variance and is noticeably more precise than the already precise lengths of the other flowers.
+Versicolor does have an outlier but is not far from the minimum value. versicolor and Virginica still overlap
+which makes telling them apart more difficult.
+
+Petal Width Box Plots:
+The distributions are quite similar to the petal length data with the variance being slightly higher. Setosa does 
+have two outliers but are adjacent to the maximum and do not overlap other data. Versicolor and Virginica still
+overlap a noticeable amount but the 1st and 2nd quarters are distinct with Virginica having the longest length.
+
+Conclusion:
+Overall Versicolor and Virginica have similar measurements which makes telling them apart difficult but the petal length
+and with are distinct enough that they can be separated with some overlap. Setosa Was constantly separated in the
+petal measurements making identification straight forward. The sepal plots however were not useful in distinguishing the 
+flowers since there was so much overlap between the three flowers. 
