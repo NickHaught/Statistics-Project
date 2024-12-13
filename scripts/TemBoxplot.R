@@ -12,6 +12,9 @@
 # step 1: load data,
 data(iris)
 
+## step 1.5: Prepare colors
+colors <- c("grey", "red", "green") ## the c is needed
+
 # step 2: chop up data and reformat it so we can use it
   # it seems the easiest way to do this is to manually extract the arrays
   # first grab subest for flower, then grab the (column?) for sepal length
@@ -23,8 +26,42 @@ SLenData <- data.frame (
   Virginica = subset(iris, Species == "virginica")$Sepal.Length
   ## S-lengths for Iris Virginica
 )
-
 # step 3: now that we have 3 data sets in one, box it!
-boxplot(SLenData, main = "Sepal Length Box Plots")
+boxplot(SLenData, col = colors, main = "Sepal Length Box Plots")
 
 ## now repeat 3 more times
+
+############### SEPAL WIDTH
+SWidthData <- data.frame (
+  Setosa = subset(iris, Species ==     "setosa")$Sepal.Width,   
+  ## sepal width for Iris Setosa
+  Versicolor = subset(iris, Species == "versicolor")$Sepal.Width,  
+  ## S-width for Iris Versicolor
+  Virginica = subset(iris, Species == "virginica")$Sepal.Width
+  ## S-width for Iris Virginica
+)
+boxplot(SWidthData, col = colors, main = "Sepal Width Box Plots")
+
+
+################## now for petal length
+PLenData <- data.frame (
+  Setosa = subset(iris, Species ==     "setosa")$Petal.Length,   
+  ## petal length for Iris Setosa
+  Versicolor = subset(iris, Species == "versicolor")$Petal.Length,  
+  ## P-Length for Iris Versicolor
+  Virginica = subset(iris, Species == "virginica")$Petal.Length
+  ## P-Length for Iris Virginica
+)
+boxplot(PLenData, col = colors, main = "Petal Length Box Plots")
+
+
+####### petal width
+PWidthData <- data.frame (
+  Setosa = subset(iris, Species ==     "setosa")$Petal.Width,   
+  ## Petal width for Iris Setosa
+  Versicolor = subset(iris, Species == "versicolor")$Petal.Width,  
+  ## P-width for Iris Versicolor
+  Virginica = subset(iris, Species == "virginica")$Petal.Width
+  ## P-width for Iris Virginica
+)
+boxplot(PWidthData, col = colors, main = "Petal Width Box Plots")
