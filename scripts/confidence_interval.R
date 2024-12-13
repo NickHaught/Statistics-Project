@@ -4,7 +4,7 @@
 # of a given dataset. 
 
 
-confidence_interval <- function(data, confidence_interval) {
+confidence_interval <- function(data, confidence_level) {
   n <- length(data)
   mean <- mean(data) # Calculate sample mean
   std_error <- sd(data) / sqrt(n)  # Calculate the standard error of the mean
