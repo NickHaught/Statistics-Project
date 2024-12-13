@@ -1,0 +1,30 @@
+[1] "Setosa -> Petal Length : Range = 1 - 1.9 , Max Frequency is 13 at bin 1.35"
+[1] "Versicolor -> Petal Length : Range = 3 - 5.1 , Max Frequency is 10 at bin 4.5"
+[1] "Virginica -> Petal Length : Range = 4.5 - 6.9 , Max Frequency is 9 at bin 5.1"
+[1] "Setosa -> Petal Width : Range = 0.1 - 0.6 , Max Frequency is 29 at bin 0.175"
+[1] "Versicolor -> Petal Width : Range = 1 - 1.8 , Max Frequency is 13 at bin 1.25"
+[1] "Virginica -> Petal Width : Range = 1.4 - 2.5 , Max Frequency is 11 at bin 1.75"
+
+Petal Width:
+Setosa is clustered around the lower range, with a peak frequency near the lower portion
+of the range of the petal width. This shows there is minimal variation in this species.
+Versicolor is more spread out compared to Setosa. While Virginica is even more spread 
+out. Both of these show more variation with the data spread out and no one bin having a
+super higher frequency.
+
+Setosa is clearly separated from Versicolor and Virginica due to its extremely narrow 
+range of petal widths. There is some overlap between Versicolor and Virginica, but 
+Virginica tends to have larger petal widths overall. Petal width appears to be a strong
+feature to distinguish Setosa from the other two species.
+
+Petal Length:
+Again Setosa's distribution is narrow with their petal lengths clustered around the lower
+range. The max frequency (the peak) is concentrated within the middle pf the distribution. 
+For Verscicolor the distribution spans a wider range, overlapping with Virginica on the 
+higher side of the range. Virginica is also distributed and varied more across a bigger
+range. 
+
+Setosa is clearly distinct in terms of petal length, showing no overlap with Versicolor
+or Virginica. There is a small amount of overlap between Verscicolor and Virginica. 
+Petal length is a great way to distinguish Setosa from the other two species. While there 
+is some overlap between the other two, the bigger range of Virginica shows some separation.
