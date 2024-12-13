@@ -1,0 +1,31 @@
+Exploratory data analysis
+
+1. Comments on separation of species
+
+Petal length and petal width:
+Setosa shows a clear separation from Versicolor and Virginica with smaller values 
+for both petal length and petal width. Versicolor and Virginica show some overlap, 
+but there is obvious visible clustering. Virginica generally has larger petal lengths 
+and widths then Versicolor. 
+
+Sepal length and sepal width:
+Theses data points show more overlap, especially with Versicolor and Virginica, making 
+them less effective for species separation. Though Setosa still shows clear separation,
+with more higher sepal widths and lower sepal lengths compared to the other two 
+species.  
+
+Sepal length and petal length:
+Setosa shows a clear separation from both Versicolor and Virginica, specifically with 
+its characteristic of shorter petals. Versicolor and Virginica have more overlap, but
+Virginica tends to have higher petal lengths compared to Versicolor. 
+
+Sepal width and petal width:
+Setosa shows a clear separation with smaller petal widths and higher sepal widths
+compared to Versicolor and Virginica. Versicolor and Virginica show overlapping, though
+Virginica tends to have larger petal widths. 
+
+Findings: 
+Setosa is easily separable from Versicolor and Virginica in all scatt plots due to its
+smaller petal dimensions and larger sepal widths. Versicolor and Virginica overlap in 
+moss plots, but observable differences in petal dimensions provide the best separation
+between the two species. Petal dimensions are the best for distinguishing species. 
