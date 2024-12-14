@@ -8,6 +8,7 @@
 ## Looks like this will be a t distribution
 ## And we are comparing means
 
+## NOTE: THIS IS CURRENTLY HARDCODED and will be remade a function later
 
 #- H0: Virg  = Vers,	H1: Virg > Vers  -->   H0: u1 = u2, H1: u1 > u2 
 #- u1 = mean Virginica Petal length, u2 = mean Versicolor Petal length 
@@ -30,19 +31,36 @@ Xbar1 = sum(Vir_PLens) / n1 ## sum up all sample values, divide by num samples
 Xbar2 = sum(Ver_PLens) / n2 ## Should be how we normally get the mean
 
 ## STEP 2.5: turns out sample variance is a tad trickier to calculate
-s1 = 0                 ## create empty s1
+s1 = 0.0                     ## create empty s1
 for (xi in Vir_PLens) {      ## get current sample - sample mean
   s1 = s1 + ((xi - Xbar1)^2) ## Then square that and add to s1
 }
 s1 = s1 / (n1-1)             ## Then finally divide by num samples-1
 
 ## again for s2
-s2 = 0                 ## create empty s1
+s2 = 0.0                     ## create empty s2
 for (xi in Ver_PLens) {      ## get current sample - sample mean
-  s2 = s2 + ((xi - Xbar2)^2) ## Then square that and add to s1
+  s2 = s2 + ((xi - Xbar2)^2) ## Then square that and add to s2
 }
 s2 = s2 / (n2-1)             ## Then finally divide by num samples-1
 
+
 ######### STEP 3: begin the Ty distribution equation'
 ### Step 3.1: get numerator
-Tnumerator = (Xbar1 - Xbar2) - ()
+Tnumerator = (Xbar1 - Xbar2) ## - (u1 - u2) NOTE we set last part to 0 (pg 346)
+### Step 3.2: get denominator
+Tdenominator = sqrt(((s1)/n1) + ((s2)/n2)) ## eq from s 19 mod 11
+                # Should we square s1 and s2 here?
+### Step 3.3: Get T value, 
+TvalTester = Tnumerator / Tdenominator
+## this value will be compared to the Ty distribution, if inside, we reject H0
+
+#### STEP 4: Get y for Ty
+yVal = 0.0
+ynumerator = ((s1/n1) + (s2/n2))^2
+ydenom1 = ((s1/n1)^2) / (n1 - 1)
+ydenom2 = ((s2/n2)^2) / (n2 - 1)
+yVal = ynumerator / (ydenom1 + ydenom2)
+yVal = floor(yVal)  ## we are supposed to round down, floor is for that.
+
+### STEP 5: get t1 and t2 (the distribution) from Ty (the y value)
