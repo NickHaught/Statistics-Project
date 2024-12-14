@@ -30,6 +30,7 @@ n2 = length(Ver_PLens)
 Xbar1 = sum(Vir_PLens) / n1 ## sum up all sample values, divide by num samples
 Xbar2 = sum(Ver_PLens) / n2 ## Should be how we normally get the mean
 
+
 ## STEP 2.5: turns out sample variance is a tad trickier to calculate
 s1 = 0.0                     ## create empty s1
 for (xi in Vir_PLens) {      ## get current sample - sample mean
@@ -44,6 +45,14 @@ for (xi in Ver_PLens) {      ## get current sample - sample mean
 }
 s2 = s2 / (n2-1)             ## Then finally divide by num samples-1
 
+#### TEMP VARIABLETESTING
+#  n1 = 25
+#  n2 = 16
+#  s1 = 100
+#  s2 = 400
+#  Xbar1 = 380
+#  Xbar2 = 370
+#test worked!
 
 ######### STEP 3: begin the Ty distribution equation'
 ### Step 3.1: get numerator
