@@ -85,6 +85,9 @@ highBound = qt(0.024, yVal, lower.tail = FALSE)
 ## NOTE!!! TEST WITH THE REST OF THE VALUES ON PAGE 349!!
 
 if  ((lowBound <= TvalTester) & (TvalTester <= highBound)) {
-  print("within bound, reject")
+  print("within bound, reject H0")
+} else {
+  print("Outside bound, fail to reject H0")
 }
+
 

@@ -23,16 +23,29 @@ s2 = s2 / (n2-1)             ## Then finally divide by num samples-1
 
 ##### now things deviate 
 ######## STEP 3: CALCULATE POOLED VARIANCE  (process on page 343)
-SPnumerator = (n1 -1)(s1) + (n2-1)(s2)
+SPnumerator = (n1 -1)*(s1) + (n2-1)*(s2)
 SPdenominator = (n1 + n2) - 2
 Sp = SPnumerator / SPdenominator
 
 #### STEP 4: Pooled T test statistic
 testNum = (Xbar1 - Xbar2)
-testDenom = sqrt(Sp((1/n1) + (1/n2)))
+testDenom = sqrt(Sp*((1/n1) + (1/n2)))
 Ttester = testNum / testDenom
 
 ### STEP 5: Y degree
 Ydeg = n1 + n2 -2   ## from page 344 Milton
 
 ### STEP 6 get interval (should be same as other cases)
+lowBound = qt(0.05, Ydeg, lower.tail = FALSE) ## why this I forget, 
+highBound = qt(0.024, Ydeg, lower.tail = FALSE)
+##                                This works for testing values on pg 349
+
+### LAST STEP
+### see if Ttester falls within the range of lowBound - highBound
+
+if  ((lowBound <= Ttester) & (Ttester <= highBound)) {
+  print("within bound, reject H0")
+} else {
+  print("Outside bound, fail to reject H0")
+}
+
