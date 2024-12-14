@@ -75,7 +75,7 @@ highBound = qt(0.024, yVal, lower.tail = FALSE)
 ### see if TvalTester falls within the range of lowBound - highBound
 ## NOTE!!! TEST WITH THE REST OF THE VALUES ON PAGE 349!!
 
-if  ((lowBound <= TvalTester) & (0 <= highBound)) {
+if  ((lowBound <= TvalTester) & (TvalTester <= highBound)) {
   print("within bound, reject")
 }
 
