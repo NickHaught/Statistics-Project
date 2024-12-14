@@ -64,3 +64,12 @@ yVal = ynumerator / (ydenom1 + ydenom2)
 yVal = floor(yVal)  ## we are supposed to round down, floor is for that.
 
 ### STEP 5: get t1 and t2 (the distribution) from Ty (the y value)
+## NOTE we have a confidence level 0f 0.05
+## as I understand it, since we rounded down, 
+#      our interval is t0.05 and t0.025. the T test value must fit to reject H0
+lowBound = qt(0.05, yVal, lower.tail = FALSE) ## why this I forget, 
+highBound = qt(0.024, yVal, lower.tail = FALSE)
+##                                This works for testing values on pg 349
+
+### LAST STEP
+### see if TvalTester falls within the range of lowBound - highBound
