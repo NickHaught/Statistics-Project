@@ -14,7 +14,7 @@ print(versicolor_variance)
 print(virginica_variance)
 
 print(var.test(
-    iris$Petal.Length[iris$Species == "versicolor"],iris$Petal.Length[iris$Species == "virginica"]
+    iris$Petal.Length[iris$Species == "virginica"],iris$Petal.Length[iris$Species == "versicolor"]
 ))
 print("------------------ Custom F test below ------------------")
 
@@ -40,16 +40,24 @@ f_test <- function(group1, group2, alpha = 0.05) {
   # Calculate p-value for the two-tailed test [MODULE 11]
   p_value <- 2 * min(1 - pf(F_obs, df1, df2), pf(F_obs, df1, df2))
   
+  # Confidence interval
+  F_upper <- qf(1 - alpha / 2, df1, df2)  
+  F_lower <- qf(alpha / 2, df1, df2)      
+  coni_lower <- F_obs / F_upper             
+  coni_upper <- F_obs / F_lower      
+  
   if (p_value <= alpha) {
-    decision <- "Reject H0: The variances are different"
+    test <- "Reject H_0: There is SUFFICIENT evidence to support that the variances are different."
   } else {
-    decision <- "Fail to Reject H0: The variances are equal"
+    test <- "Fail to Reject H_0: There is INSUFFICIENT evidence to support that the variances are different."
   }
 
   return(list(
     F_statistic = F_obs,
     p_value = p_value,
-    decision = decision
+    test = test,
+    conifidence_lower = coni_lower,
+    conifidence_upper = coni_upper
   ))
 }
 

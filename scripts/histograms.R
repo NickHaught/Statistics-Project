@@ -26,16 +26,15 @@ analyze(iris$Petal.Width[iris$Species == "setosa"], "Petal width", "Setosa")
 analyze(iris$Petal.Width[iris$Species == "versicolor"], "Petal width", "Versicolor")
 analyze(iris$Petal.Width[iris$Species == "virginica"], "Petal width", "Virginica")
 
-
 # Big histogram for petal length
-hist(iris$Petal.Length[iris$Species == "setosa"], main = "Petal Length Distribution for All Species", xlab = "Petal Length (cm)", breaks = 10, col = rgb(0, 0, 1, 0.5), xlim = c(0, 8), ylim = c(0, 15))
+hist(iris$Petal.Length[iris$Species == "setosa"], main = "Petal Length Distribution for All Species", xlab = "Petal Length (cm)", breaks = 10, col = rgb(0, 0, 1, 0.5), xlim = c(0, 8), ylim = c(0, 15), cex.main = 1.8, cex.lab = 2,cex.axis = 1.8 )
 hist(iris$Petal.Length[iris$Species == "versicolor"], breaks = 10, col = rgb(1, 0, 0, 0.5), add = TRUE)
 hist(iris$Petal.Length[iris$Species == "virginica"], breaks = 10, col = rgb(0, 1, 0, 0.5), add = TRUE)
-legend("topright", legend = levels(iris$Species), fill = c(rgb(0, 0, 1, 0.5), rgb(1, 0, 0, 0.5), rgb(0, 1, 0, 0.5)))
+legend("topright", legend = levels(iris$Species), fill = c(rgb(0, 0, 1, 0.5), rgb(1, 0, 0, 0.5), rgb(0, 1, 0, 0.5)), cex = 1.5)
 
 
 # Big Histogram for petal width
-hist(iris$Petal.Width[iris$Species == "setosa"], main = "Petal Width Distribution for All Species", xlab = "Petal Width (cm)", col = rgb(0, 0, 1, 0.5), xlim = c(0, 3), ylim = c(0, 30), breaks = 10)
+hist(iris$Petal.Width[iris$Species == "setosa"], main = "Petal Width Distribution for All Species", xlab = "Petal Width (cm)", col = rgb(0, 0, 1, 0.5), xlim = c(0, 3), ylim = c(0, 30), breaks = 10, cex.main = 1.8, cex.lab = 2,cex.axis = 1.8 )
 hist(iris$Petal.Width[iris$Species == "versicolor"], breaks = 10, col = rgb(1, 0, 0, 0.5), add = TRUE)
 hist(iris$Petal.Width[iris$Species == "virginica"], breaks = 10, col = rgb(0, 1, 0, 0.5), add = TRUE)
-legend("topright", legend = levels(iris$Species), fill = c(rgb(0, 0, 1, 0.5), rgb(1, 0, 0, 0.5), rgb(0, 1, 0, 0.5)))
+legend("topright", legend = levels(iris$Species), fill = c(rgb(0, 0, 1, 0.5), rgb(1, 0, 0, 0.5), rgb(0, 1, 0, 0.5)), cex = 1.5)
