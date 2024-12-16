@@ -1,23 +1,4 @@
 
-
-data(iris)
-setosa_petal <- iris$Petal.Length[iris$Species == "setosa"]
-versicolor_petal <- iris$Petal.Length[iris$Species == "versicolor"]
-virginica_petal <- iris$Petal.Length[iris$Species == "virginica"]
-
-setosa_variance <- var(setosa_petal)
-versicolor_variance <- var(versicolor_petal)
-virginica_variance <- var(virginica_petal)
-
-print(setosa_variance)
-print(versicolor_variance)
-print(virginica_variance)
-
-print(var.test(
-    iris$Petal.Length[iris$Species == "virginica"],iris$Petal.Length[iris$Species == "versicolor"]
-))
-print("------------------ Custom F test below ------------------")
-
 f_test <- function(group1, group2, alpha = 0.05) {
   
   # Calculate variance and size of groups
@@ -61,5 +42,14 @@ f_test <- function(group1, group2, alpha = 0.05) {
   ))
 }
 
+data(iris)
+setosa_petal <- iris$Petal.Length[iris$Species == "setosa"]
+versicolor_petal <- iris$Petal.Length[iris$Species == "versicolor"]
+virginica_petal <- iris$Petal.Length[iris$Species == "virginica"]
+
+print("---------------Test 1---------------")
 f_test_result <- f_test(virginica_petal,versicolor_petal,   alpha = 0.05)
+print(f_test_result)
+print("---------------Test 2---------------")
+f_test_result <- f_test(setosa_petal,versicolor_petal,   alpha = 0.05)
 print(f_test_result)

@@ -8,27 +8,40 @@
 #   meaning that (I think) that the length of the flower will
 #   have a 95% chance of being in the returned interval
 
-# STEP 1: LOAD DATA
+# Load the iris dataset
 data(iris)
 
-# STEP 2: LOAD FUNCTION
-source("confidence_interval.R") 
-## This should grab the function and make it usable here (like import)
-## Note this only works if that file is in the same folder/working directory
+# Subset the data by species for sepal length
+setosa_sepal <- iris$Sepal.Length[iris$Species == "setosa"]
+versicolor_sepal <- iris$Sepal.Length[iris$Species == "versicolor"]
+virginica_sepal <- iris$Sepal.Length[iris$Species == "virginica"]
 
-# STEP 3: CREATE SOME VARS
-# for convenience I will put some easily tweak-able values here
-wanted_confidence <- 0.95  # interval we want
+# Function to calculate descriptive statistics
+calculate_stats <- function(data, species_name) {
+  list(
+    Species = species_name,
+    Mean = mean(data),
+    Median = median(data),
+    Variance = var(data),
+    Std_Dev = sd(data),
+    Min = min(data),
+    Lower_Quartile = quantile(data, 0.25),
+    Upper_Quartile = quantile(data, 0.75),
+    Max = max(data),
+    Outliers = paste(data[data < (quantile(data, 0.25) - 1.5 * IQR(data)) |
+                            data > (quantile(data, 0.75) + 1.5 * IQR(data))], collapse = ", ")
+  )
+}
 
-Setosa_data = subset(iris, Species     == "setosa")$Petal.Length   
-Versicolor_data = subset(iris, Species == "versicolor")$Petal.Length  
-Virginica_data = subset(iris, Species == "virginica")$Petal.Length
+# Calculate statistics for each species
+setosa_stats <- calculate_stats(setosa_sepal, "Setosa")
+versicolor_stats <- calculate_stats(versicolor_sepal, "Versicolor")
+virginica_stats <- calculate_stats(virginica_sepal, "Virginica")
 
+# Combine into a data frame
+sepal_length_table <- data.frame(
+  rbind(setosa_stats, versicolor_stats, virginica_stats)
+)
 
-# STEP 4: FEED INPUTS TO FUNCTION     ## data and interval in, len interval out
-Setosa_interval = confidence_interval(data = Setosa_data, 
-                                      confidence_level = wanted_confidence)
-Versicolor_interval = confidence_interval(data = Versicolor_data, 
-                                          confidence_level = wanted_confidence)
-Virginica_interval = confidence_interval(data = Virginica_data, 
-                                         confidence_level = wanted_confidence)
+# Print the table
+print(sepal_length_table)
