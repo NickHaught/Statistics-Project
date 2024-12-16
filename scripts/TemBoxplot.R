@@ -27,7 +27,7 @@ SLenData <- data.frame (
   ## S-lengths for Iris Virginica
 )
 # step 3: now that we have 3 data sets in one, box it!
-boxplot(SLenData, col = colors, main = "Sepal Length Box Plots")
+boxplot(SLenData, col = colors, main = "Sepal Length Box Plots", cex.lab = 2, cex.main = 2, cex.axis = 2)
 
 ## now repeat 3 more times
 
@@ -40,7 +40,7 @@ SWidthData <- data.frame (
   Virginica = subset(iris, Species == "virginica")$Sepal.Width
   ## S-width for Iris Virginica
 )
-boxplot(SWidthData, col = colors, main = "Sepal Width Box Plots")
+boxplot(SWidthData, col = colors, main = "Sepal Width Box Plots", cex.lab = 2, cex.main = 2, cex.axis = 2)
 
 
 ################## now for petal length
@@ -52,7 +52,7 @@ PLenData <- data.frame (
   Virginica = subset(iris, Species == "virginica")$Petal.Length
   ## P-Length for Iris Virginica
 )
-boxplot(PLenData, col = colors, main = "Petal Length Box Plots")
+boxplot(PLenData, col = colors, main = "Petal Length Box Plots", cex.lab = 2, cex.main = 2, cex.axis = 2)
 
 
 ####### petal width
@@ -64,4 +64,6 @@ PWidthData <- data.frame (
   Virginica = subset(iris, Species == "virginica")$Petal.Width
   ## P-width for Iris Virginica
 )
-boxplot(PWidthData, col = colors, main = "Petal Width Box Plots")
+boxplot(PWidthData, col = colors, main = "Petal Width Box Plots", cex.lab = 2, cex.main = 2, cex.axis = 2)
+
+
