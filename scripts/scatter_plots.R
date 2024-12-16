@@ -3,9 +3,7 @@
 # using scatter plots and legends to differentiate species.
 
 data(iris)
-
-# Colors for species
-colors <- as.numeric(iris$Species)
+colors <- as.numeric(iris$Species) # makes it easier to set up colors 
 
 # Sepal Length vs Sepal Width
 plot(iris$Sepal.Length, iris$Sepal.Width, col = colors, pch = 20, cex = 2, xlab = "Sepal Length (cm)", ylab = "Sepal Width (cm)", main = "Sepal Length vs Sepal Width", cex.lab = 2, cex.main = 2.2, cex.axis = 1.8)

@@ -9,11 +9,8 @@ confidence_interval <- function(data, confidence_level) {
   std_error <- sd(data) / sqrt(n)  # Calculate the standard error of the mean
   
   # Determine the critical value and margin of error
-  if (n >= 30) {
-    error_margin <- qnorm((1 + confidence_level) / 2) * std_error
-  } else {
-    error_margin <- qt((1 + confidence_level) / 2, df = n - 1) * std_error
-  }
+  critical_value <- qt((1 + confidence_level) / 2, df = n - 1) 
+  error_margin <- critical_value * std_error
   
   # Calculate the lower and upper bounds
   lower <- mean - error_margin
