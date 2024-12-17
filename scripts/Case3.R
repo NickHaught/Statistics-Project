@@ -1,3 +1,6 @@
+# Program Name: Case3.R
+# This script runs an unequal variance t-test (Case III) to compare the means of 
+# two groups when their variances are not equal.
 
 ## Here I will attempt to make code for the Case III test from mod 11
 ## Equation(s) are on slide and in note sheet for reference
@@ -82,15 +85,14 @@ p_value <- pt(Tval, df, lower.tail = FALSE)
 
 # Print Results
 cat("T-Statistic:", Tval, "\n")
-cat("Degrees of Freedom:", df, "\n")
+cat("Degrees of Freedom:", yVal, "\n")
 cat("Critical Value (Right Tail, alpha = 0.05):", t_critical, "\n")
 cat("P-value:", p_value, "\n")
 
 ### LAST STEP
-### compare Tval to t_critical
-## NOTE!!! TEST WITH THE REST OF THE VALUES ON PAGE 349!!
-
-if  (Tval > t_critical) {
+### Compare p-value to alpha
+alpha <- 0.05  # Significance level
+if (p_value < alpha) {
   print("Reject H0, because there is sufficient evidence to support the alternative hypothesis.")
 } else {
   print("Fail to Reject H0, because there is insufficient evidence to support the alternative hypothesis.")

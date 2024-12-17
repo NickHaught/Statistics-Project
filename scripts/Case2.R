@@ -1,4 +1,6 @@
-
+# Program Name: Case2.R
+# This script performs a pooled t-test (Case II) to compare the means 
+# of two groups when their variances are equal.
 
 ## STEP 1: Load data :D
 data(iris)
@@ -35,17 +37,25 @@ Ttester = testNum / testDenom
 ### STEP 5: Y degree
 Ydeg = n1 + n2 -2   ## from page 344 Milton
 
-### STEP 6 get interval (should be same as other cases)
-lowBound = qt(0.05, Ydeg, lower.tail = FALSE) ## why this I forget, 
-highBound = qt(0.024, Ydeg, lower.tail = FALSE)
+### STEP 6 get critical (should be same as other cases)
+t_critical = qt(0.05, Ydeg, lower.tail = FALSE) 
 ##                                This works for testing values on pg 349
 
-### LAST STEP
-### see if Ttester falls within the range of lowBound - highBound
+p_value <- pt(Ttester, df = Ydeg, lower.tail = FALSE)
 
-if  ((lowBound <= Ttester) & (Ttester <= highBound)) {
-  print("within bound, reject H0")
+# dont forget to print results
+cat("T-Statistic:", Ttester, "\n")
+cat("Degrees of Freedom:", Ydeg, "\n")
+cat("Critical Value (Right Tail, alpha = 0.05):", t_critical, "\n")
+cat("P-value:", p_value, "\n")
+
+### LAST STEP
+### Compare p-value to alpha
+alpha <- 0.05  # Significance level
+if (p_value < alpha) {
+  print("Reject H0, because there is sufficient evidence to support the alternative hypothesis.")
 } else {
-  print("Outside bound, fail to reject H0")
+  print("Fail to Reject H0, because there is insufficient evidence to support the alternative hypothesis.")
 }
+
 

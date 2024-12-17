@@ -1,3 +1,5 @@
+# Program Name: F_test.R
+# This script performs an F-test to compare the variances of two independent groups. 
 
 f_test <- function(group1, group2, alpha = 0.05) {
   

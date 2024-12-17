@@ -1,23 +1,24 @@
-
+# Program Name: Boxplot.R
+# Create boxplots for all features in the Iris dataset
 
  # Multi-graph per boxplot explaination: 
  # https://www.geeksforgeeks.org/plot-multiple-boxplots-in-one-graph-in-r/
-
+  # we decided to put them in graphs together to save space in paper.
 
 # for multiple data plots, the data needs to be "framed"
 # I believe that means we take 3 sets of data and just
 # staple them together in a special way.
 # From the looks of it, the data is already organised in a useful way
 
-# step 1: load data,
+# step 1: load data
 data(iris)
 
 ## step 1.5: Prepare colors
 colors <- c("grey", "red", "green") ## the c is needed
 
-# step 2: chop up data and reformat it so we can use it
+# step 2: chop up data and reformat
   # it seems the easiest way to do this is to manually extract the arrays
-  # first grab subest for flower, then grab the (column?) for sepal length
+  # first grab subsett for flower, then grab the (column?) for sepal length
 SLenData <- data.frame (
   Setosa = subset(iris, Species ==     "setosa")$Sepal.Length,   
   ## sepal lengths for Iris Setosa
